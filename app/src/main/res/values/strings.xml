@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Drax\'s Spells</string>
+    <string name="title_activity_spell_detail">SpellDetailActivity</string>
 </resources>
