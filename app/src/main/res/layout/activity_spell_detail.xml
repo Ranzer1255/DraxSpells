@@ -12,7 +12,6 @@
         android:id="@+id/spellName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:fontFamily="cursive"
@@ -24,7 +23,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        tools:ignore="HardcodedText"/>
 
     <ImageView
         android:id="@+id/nameDivider"
@@ -32,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/spellName"
         android:layout_centerHorizontal="true"
+        android:contentDescription="@string/divider_graphic"
         android:scaleType="fitXY"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -45,7 +45,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/nameDivider"
         android:layout_centerHorizontal="true"
-        android:elevation="1dp"
         android:fontFamily="cursive"
         android:text="Spell school and level"
         android:textAlignment="center"
@@ -53,14 +52,126 @@
         android:textStyle="bold|italic"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameDivider"/>
+        app:layout_constraintTop_toBottomOf="@+id/nameDivider"
+        tools:ignore="HardcodedText"/>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelAndSchool">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lblCastingTime"
+                android:layout_width="match_parent"
+                android:background="@drawable/cell_shape"
+                android:padding="6dp"
+                android:text="@string/casting_time"
+                android:textAlignment="center"
+                android:textSize="@dimen/table_text_size"/>
+
+            <TextView
+                android:id="@+id/lblRange"
+                android:layout_width="match_parent"
+                android:background="@drawable/cell_shape"
+                android:padding="6dp"
+                android:text="@string/range"
+                android:textAlignment="center"
+                android:textSize="@dimen/table_text_size"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/CastingTime"
+                android:background="@drawable/cell_shape"
+                android:padding="6dp"
+                android:text="1 Action"
+                android:textAlignment="center"
+                android:textSize="@dimen/table_text_size"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:id="@+id/Range"
+                android:background="@drawable/cell_shape"
+                android:padding="6dp"
+                android:text="120 feet"
+                android:textAlignment="center"
+                android:textSize="@dimen/table_text_size"
+                tools:ignore="HardcodedText"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lblComponents"
+                android:background="@drawable/cell_shape"
+                android:padding="6dp"
+                android:text="@string/components"
+                android:textAlignment="center"
+                android:textSize="@dimen/table_text_size"/>
+
+            <TextView
+                android:id="@+id/lblDuration"
+                android:background="@drawable/cell_shape"
+                android:padding="6dp"
+                android:text="@string/duration"
+                android:textAlignment="center"
+                android:textSize="@dimen/table_text_size"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/components"
+                android:background="@drawable/cell_shape"
+                android:padding="6dp"
+                android:text="S, V, M"
+                android:textAlignment="center"
+                android:textSize="@dimen/table_text_size"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:id="@+id/duration"
+                android:background="@drawable/cell_shape"
+                android:padding="6dp"
+                android:text="instantaneous"
+                android:textAlignment="center"
+                android:textSize="@dimen/table_text_size"
+                tools:ignore="HardcodedText"/>
+
+        </TableRow>
+
+
+    </TableLayout>
 
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="wrap_content"
         android:layout_height="250dp"
+        android:layout_marginBottom="-1dp"
         android:scrollbarStyle="insideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
@@ -73,7 +184,8 @@
             android:paddingRight="16dp"
             android:paddingStart="16dp"
             android:text="This is the Text that will be replaced by the spell discription"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"/>
     </ScrollView>
 
 
