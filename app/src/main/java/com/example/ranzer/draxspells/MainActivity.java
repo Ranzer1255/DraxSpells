@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
 	private final static String TAG = "MainActivity";
 	public final static String SPELL_POSITION = "spellPosition";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 		Log.v(TAG, "Starting MainActivity");
 		setContentView(R.layout.activity_main);
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-    }
+	}
 
 	private void launchDetailActivity(int position) {
 		Intent intent = new Intent(this, SpellDetailActivity.class);
