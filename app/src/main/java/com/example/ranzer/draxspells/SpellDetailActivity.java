@@ -39,12 +39,22 @@ public class SpellDetailActivity extends AppCompatActivity {
 			tvLevelSchool.setText(String.format("%s Level %s", ordinal(spellItem.getLevel()), spellItem.getSchool()));
 		}
 
-		tvSpellDescription.setText(spellItem.getDescription());
+		setDescription();
 
 		tvCastingTime.setText(spellItem.getCastingTime());
 		tvRange.setText(spellItem.getRange());
 		tvComponents.setText(spellItem.getComponents());
 		tvDuration.setText(spellItem.getDuration());
+	}
+
+	private void setDescription() {
+
+		tvSpellDescription.setText(
+				(spellItem.getHigherLevels() != null) ?
+						String.format("%s\n\nAt Higher Levels\n\n%s",
+								spellItem.getDescription(), spellItem.getHigherLevels()) :
+						spellItem.getDescription()
+		);
 	}
 
 	private void setSpellName() {
