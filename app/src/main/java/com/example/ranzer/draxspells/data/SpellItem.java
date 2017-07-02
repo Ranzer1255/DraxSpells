@@ -2,20 +2,20 @@ package com.example.ranzer.draxspells.data;
 
 public class SpellItem {
 
-	private String spellID;
-	private String name;
-	private int level;
-	private String school;
-	private String castingTime;
-	private String range;
-	private String components;
-	private String duration;
-	private boolean concentration;
-	private String description;
-	private String higherLevels;
-	private String saveDC;
-	private String attackBonus;
-	private String damage;
+	private final String spellID;
+	private final String name;
+	private final int level;
+	private final String school;
+	private final String castingTime;
+	private final String range;
+	private final String components;
+	private final String duration;
+	private final boolean concentration;
+	private final String description;
+	private final String higherLevels;
+	private final String saveDC;
+	private final String attackBonus;
+	private final String damage;
 
 	public SpellItem(String spellID, String name, int level, String school, String castingTime,
 					 String range, String components, String duration, boolean concentration,

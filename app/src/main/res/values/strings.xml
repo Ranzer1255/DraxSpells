@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Drax\'s Spells</string>
-    <string name="title_activity_spell_detail">SpellDetailActivity</string>
     <string name="casting_time">Casting Time</string>
     <string name="range">Range</string>
     <string name="duration">Duration</string>

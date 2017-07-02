@@ -3,11 +3,8 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="16dp"
-                android:paddingEnd="16dp"
-                android:paddingTop="16dp"
-                tools:context="com.example.ranzer.draxspells.MainActivity"
-                android:paddingRight="16dp">
+                android:padding="16dp"
+                tools:context="com.example.ranzer.draxspells.MainActivity">
 
     <ListView
         android:id="@+id/android:list"

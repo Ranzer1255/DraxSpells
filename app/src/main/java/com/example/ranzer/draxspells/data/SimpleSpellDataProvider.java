@@ -39,7 +39,7 @@ public class SimpleSpellDataProvider {
 								String range, String components, String duration, boolean concentration,
 								String description, String higherLevels, String saveDC, String attackBonus,
 								String damage) {
-		if (spellID != null) {
+		if (spellID == null) {
 			spellID = UUID.randomUUID().toString();
 		}
 		SpellItem spell = new SpellItem(spellID, name, level, school, castingTime, range, components,

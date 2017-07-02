@@ -7,8 +7,6 @@ import android.widget.TextView;
 import com.example.ranzer.draxspells.data.SimpleSpellDataProvider;
 import com.example.ranzer.draxspells.data.SpellItem;
 
-import org.w3c.dom.Text;
-
 public class SpellDetailActivity extends AppCompatActivity {
 
 	private SpellItem spellItem;
@@ -21,17 +19,12 @@ public class SpellDetailActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_spell_detail);
 
-//		//start test code
-//		spellItem = SimpleSpellDataProvider.spellList.get(0);
-//		//end test code
-
 		int spellPos = getIntent().getIntExtra(MainActivity.SPELL_POSITION, -1);
 		spellItem = SimpleSpellDataProvider.spellList.get(spellPos);
 
 		getViews();
 
 		setSpellName();
-		StringBuilder sb = new StringBuilder();
 
 		if (spellItem.getLevel() == 0) {
 			tvLevelSchool.setText(String.format("%s Cantrip", spellItem.getSchool()));
@@ -77,7 +70,7 @@ public class SpellDetailActivity extends AppCompatActivity {
 		tvDuration = (TextView) findViewById(R.id.duration);
 	}
 
-	public static String ordinal(int i) {
+	private static String ordinal(int i) {
 		String[] sufixes = new String[]{"th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"};
 		switch (i % 100) {
 			case 11:
