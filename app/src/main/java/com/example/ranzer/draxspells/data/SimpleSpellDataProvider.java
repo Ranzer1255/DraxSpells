@@ -58,7 +58,7 @@ public class SimpleSpellDataProvider {
 
 		addSpell(null, "Prestigitation", 0, "transmutation", "1 Action", "10 Feet", "V,S", "Up to 1 hour",
 				false, "This spell is a minor magical trick that novice spellcasters use for practice. " +
-						"Youc reate one of the following magical effects within range:\n" +
+						"You create one of the following magical effects within range:\n" +
 						"* You create an instantaneous. harmless sensory effect. such as a shower of " +
 						"sparks. a puff of wind. faint musical notes. or an odd odor.\n\n" +
 						"* You instantaneously light or snuff out a candle. a torch. or a small campfire.\n\n" +
@@ -72,6 +72,16 @@ public class SimpleSpellDataProvider {
 						"three of its non-instantaneous effects active at a time. and you can " +
 						"dismiss such an effect as an action.", null, null, null, null
 				);
+
+		addSpell(null,"Burning Hands", 1, "evocation", "1 Action", "15 foot cone", "V,S", "Instantanious", false,
+					"As you hold your hands with thumbs touching and fingers spread, a thin sheet of " +
+							"flames shoots forth from your outstretched fingertips. Each creature in a 15-foot " +
+							"cone must make a Dexterity saving throw. A creature takes 3d6 fire damage " +
+							"on a failed save, or half as much damage on a successful one.\n" +
+							"The fire ignites any flammable objects in the area that aren't being worn" +
+							" or carried.\n",
+							"When you cast this spell using a spell slot of 2nd level or higher, the " +
+							"damage increases by 1d6 for each slot level above 1st.", "Dex Save",null,"3d8");
 	}
 
 	public static void addSpell(String spellID, String name, int level, String school, String castingTime,
