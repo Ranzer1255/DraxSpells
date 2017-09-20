@@ -93,4 +93,14 @@ public class SpellItem {
 	public String getDamage() {
 		return damage;
 	}
+
+    public int compare(SpellItem o2) {
+		if(o2.getLevel()==this.getLevel()) {
+			return this.name.compareTo(o2.getName());
+		} else if(o2.getLevel()<this.getLevel()){
+			return 1;
+		} else {
+			return -1;
+		}
+    }
 }

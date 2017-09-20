@@ -13,12 +13,14 @@ import com.example.ranzer.draxspells.data.SimpleSpellDataProvider;
 import com.example.ranzer.draxspells.data.SpellItem;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class MainActivity extends AppCompatActivity {
 
 	private final static String TAG = "MainActivity";
-	public final static String SPELL_POSITION = "spellPosition";
+	public static final String SPELL_NAME = "spellName";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +28,22 @@ public class MainActivity extends AppCompatActivity {
 		Log.v(TAG, "Starting MainActivity");
 		setContentView(R.layout.activity_main);
 
-		List<String> spellList = new ArrayList<>();
-		for (SpellItem spell : SimpleSpellDataProvider.spellList) {
-			spellList.add(spell.getName());
-		}
+		final List<String> spellList = new ArrayList<>();
+		SimpleSpellDataProvider.spellList.stream().sorted(new Comparator<SpellItem>() {
+			@Override
+			public int compare(SpellItem o1, SpellItem o2) {
+				return o1.compare(o2);
+			}
+		}).forEach(new Consumer<SpellItem>() {
+			@Override
+			public void accept(SpellItem spellItem) {
+				spellList.add(spellItem.getName());
+			}
+		});
+
+//		for (SpellItem spell : SimpleSpellDataProvider.spellList) {
+//			spellList.add(spell.getName());
+//		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, spellList);
 
 		ListView lv = (ListView) findViewById(android.R.id.list);
@@ -38,15 +52,15 @@ public class MainActivity extends AppCompatActivity {
 		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				launchDetailActivity(position);
+				launchDetailActivity(spellList.get(position));
 			}
 		});
 
 	}
 
-	private void launchDetailActivity(int position) {
+	private void launchDetailActivity(String spell) {
 		Intent intent = new Intent(this, SpellDetailActivity.class);
-		intent.putExtra(SPELL_POSITION, position);
+		intent.putExtra(SPELL_NAME, spell);
 		startActivity(intent);
 	}
 }

@@ -19,8 +19,8 @@ public class SpellDetailActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_spell_detail);
 
-		int spellPos = getIntent().getIntExtra(MainActivity.SPELL_POSITION, -1);
-		spellItem = SimpleSpellDataProvider.spellList.get(spellPos);
+		String spellName = getIntent().getStringExtra(MainActivity.SPELL_NAME);
+		spellItem = SimpleSpellDataProvider.spellMap.get(spellName);
 
 		getViews();
 

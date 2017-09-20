@@ -56,7 +56,7 @@
         tools:ignore="HardcodedText"/>
 
     <TableLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -75,7 +75,7 @@
                 android:padding="6dp"
                 android:text="@string/casting_time"
                 android:textAlignment="center"
-                android:textSize="@dimen/table_text_size"/>
+                android:textSize="@dimen/table_text_size" />
 
             <TextView
                 android:id="@+id/lblRange"
@@ -84,7 +84,7 @@
                 android:padding="6dp"
                 android:text="@string/range"
                 android:textAlignment="center"
-                android:textSize="@dimen/table_text_size"/>
+                android:textSize="@dimen/table_text_size" />
 
         </TableRow>
 
@@ -100,7 +100,7 @@
                 android:text="1 Action"
                 android:textAlignment="center"
                 android:textSize="@dimen/table_text_size"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/Range"
@@ -109,7 +109,7 @@
                 android:text="120 feet"
                 android:textAlignment="center"
                 android:textSize="@dimen/table_text_size"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
         </TableRow>
 
@@ -124,7 +124,7 @@
                 android:padding="6dp"
                 android:text="@string/components"
                 android:textAlignment="center"
-                android:textSize="@dimen/table_text_size"/>
+                android:textSize="@dimen/table_text_size" />
 
             <TextView
                 android:id="@+id/lblDuration"
@@ -132,7 +132,7 @@
                 android:padding="6dp"
                 android:text="@string/duration"
                 android:textAlignment="center"
-                android:textSize="@dimen/table_text_size"/>
+                android:textSize="@dimen/table_text_size" />
 
         </TableRow>
 
@@ -148,7 +148,7 @@
                 android:text="S, V, M"
                 android:textAlignment="center"
                 android:textSize="@dimen/table_text_size"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/duration"
@@ -157,7 +157,7 @@
                 android:text="instantaneous"
                 android:textAlignment="center"
                 android:textSize="@dimen/table_text_size"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
         </TableRow>
 
