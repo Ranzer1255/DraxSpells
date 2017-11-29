@@ -16,15 +16,15 @@ public class SimpleSpellDataProvider {
 		spellList = new ArrayList<>();
 		spellMap = new HashMap<>();
 
-//		addSpell(null, "Fireball", 3, "Evocation", "1 Action", "120 Feet", "S,V,M", "Instantaneous", false,
-//				"A bright streak flashes from our pointing finger to a point you choose within range " +
-//						"and then blossoms with a low roar into an explosion of flame. Each creature " +
-//						"in a 20 foot radius sphere centered on that point must make a Dexterity " +
-//						"saving throw. A target takes 8d6 fire damage on a failed save, or half as " +
-//						"much damage on a successful one.\n\n" +
-//				"The fire spreads around corners. it ignites flammable objects in the area that aren't being worn or carried.",
-//				"When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd",
-//				"Dex Save", null, "8d6");
+		addSpell(null, "Fireball", 3, "Evocation", "1 Action", "120 Feet", "S,V,M", "Instantaneous", false,
+				"A bright streak flashes from our pointing finger to a point you choose within range " +
+						"and then blossoms with a low roar into an explosion of flame. Each creature " +
+						"in a 20 foot radius sphere centered on that point must make a Dexterity " +
+						"saving throw. A target takes 8d6 fire damage on a failed save, or half as " +
+						"much damage on a successful one.\n\n" +
+				"The fire spreads around corners. it ignites flammable objects in the area that aren't being worn or carried.",
+				"When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd",
+				"Dex Save", null, "8d6");
 
 		addSpell(null, "Mage Hand", 0, "Conjuration", "1 Action", "30 Feet", "S,V", "1 Minute", false,
 				"A spectral, floating hand appears at a point you choose within range. The hand lasts " +
@@ -99,14 +99,11 @@ public class SimpleSpellDataProvider {
 		);
 		//shatter
 		addSpell(null, "Shatter", 2, "evocation", "1 Action", "60 Feet", "V,S,M", "Instantaneous", false,
-				"A sudden loud ringing noise, painfully intense, erupts from a point of your choice " +
-						"within range. Each creature in a lO-foot-radius sphere centered on that " +
-						"point must make a Constitution saving throw. A creature takes 3d8 thunder damage " +
-						"on a failed save, or half as much damage on a successful one. A creature " +
-						"made of inorganic material such as stone, crystal, or metal has disadvantage on " +
-						"this saving throw.\n\n" +
-						"nonmagical object that isn't being worn or carried also takes the damage " +
-						"if it's in the spell's area.",
+				"A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range." +
+						" Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. " +
+						"A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. " +
+						"A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.\n\n"+
+						"A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area.",
 				"When you cast this spell using a spell slot of 3rd level or higher, the damage " +
 						"increases by ld8 for each slot level above 2nd.",
 				"Con Save", null, "3d8 Thunder Damage");
@@ -129,6 +126,17 @@ public class SimpleSpellDataProvider {
 						"attacker is immune to this effect if it doesn't rely on sight, " +
 						"as with blindsight, or can see through illusions, as with truesight.",
 				null, null, null, null);
+
+		addSpell(null, "Dragon's Breath", 2, "Transmutation", "1 bonus action", "Touch", "V,S,M", "Concentration, up to 1 Minute", true,
+				"You touch one willing creature and imbue it with the power to spew magical energy " +
+						"from its mouth, provided it has one. Choose acid, cold, fire, lightning, " +
+						"or poison. Until the spell ends, the creature can use an action to exhale " +
+						"energy of the chosen type in a 15-foot cone. Each creature in that area " +
+						"must make a Dexterity saving throw, taking 3d6 damage of the chosen type " +
+						"on a failed save, or half as much damage on a successful one.",
+				"When you cast this spell using a spell slot of 3rd level or higher, the damage " +
+						"increases by 1d6 for each slot level above 2nd.",
+				"Dex", null, "3d6 <Typed> damage");
 	}
 
 	public static void addSpell(String spellID, String name, int level, String school, String castingTime,

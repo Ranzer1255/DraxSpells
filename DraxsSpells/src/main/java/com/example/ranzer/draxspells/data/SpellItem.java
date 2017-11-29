@@ -94,6 +94,7 @@ public class SpellItem {
 		return damage;
 	}
 
+	//sorts by Spell level then by name.
     public int compare(SpellItem o2) {
 		if(o2.getLevel()==this.getLevel()) {
 			return this.name.compareTo(o2.getName());
