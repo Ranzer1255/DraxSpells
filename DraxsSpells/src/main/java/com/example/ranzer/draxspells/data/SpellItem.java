@@ -1,20 +1,39 @@
 package com.example.ranzer.draxspells.data;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity
 public class SpellItem {
 
+	@PrimaryKey
 	private final String spellID;
+	@ColumnInfo
 	private final String name;
+	@ColumnInfo
 	private final int level;
+	@ColumnInfo
 	private final String school;
+	@ColumnInfo
 	private final String castingTime;
+	@ColumnInfo
 	private final String range;
+	@ColumnInfo
 	private final String components;
+	@ColumnInfo
 	private final String duration;
+	@ColumnInfo
 	private final boolean concentration;
+	@ColumnInfo
 	private final String description;
+	@ColumnInfo
 	private final String higherLevels;
+	@ColumnInfo
 	private final String saveDC;
+	@ColumnInfo
 	private final String attackBonus;
+	@ColumnInfo
 	private final String damage;
 
 	public SpellItem(String spellID, String name, int level, String school, String castingTime,
@@ -94,8 +113,15 @@ public class SpellItem {
 		return damage;
 	}
 
-	//sorts by Spell level then by name.
-    public int compare(SpellItem o2) {
+	/**
+	 * compares this object with another SpellItem. first by Spell Level, then by Spell Name
+	 * Lexicographically
+	 *
+	 * @param o2 SpellItem to be compared to
+	 * @return 0 if both the spell level and spell name are equal. -1 if this is lower in spell level
+	 * or in spell name lexicographically. 1 if this is higher in spell level or spell name lexicographically
+	 */
+	public int compareTo(SpellItem o2) {
 		if(o2.getLevel()==this.getLevel()) {
 			return this.name.compareTo(o2.getName());
 		} else if(o2.getLevel()<this.getLevel()){
@@ -103,5 +129,5 @@ public class SpellItem {
 		} else {
 			return -1;
 		}
-    }
+	}
 }

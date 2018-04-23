@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 		SimpleSpellDataProvider.spellList.stream().sorted(new Comparator<SpellItem>() {
 			@Override
 			public int compare(SpellItem o1, SpellItem o2) {
-				return o1.compare(o2);
+				return o1.compareTo(o2);
 			}
 		}).forEach(new Consumer<SpellItem>() {
 			@Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 //		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, spellList);
 
-		ListView lv = (ListView) findViewById(android.R.id.list);
+		ListView lv = findViewById(android.R.id.list);
 		lv.setAdapter(adapter);
 
 		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
